@@ -1,5 +1,4 @@
 <h1>{{title}}</h1>
-<meta name="referrer" content="strict-origin-when-cross-origin" />
 <div>
     <label>Player Name: </label>
     {{playerName}}
@@ -8,13 +7,7 @@
         <input [(ngModel)]="playerName" />
     </div> -->
     <div>
-        <button (click)="addUser()">Add</button>
+        <button (click)="addPlayer()">Add</button>
     </div>
 </div>
 
-
-<!-- <form #f="ngForm" (ngSubmit)="addUser(f)" novalidate>
-    <input name="first" ngModel required #first="ngModel">
-    <input name="last" ngModel>
-    <button>Submit</button>
-</form> -->
