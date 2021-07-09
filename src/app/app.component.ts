@@ -25,7 +25,7 @@ export class AppComponent {
     this.title = 'Guess My Nation';
   }
 
-  addUser() {
+  addPlayer() {
     // const model: CreatePlayerModel('ali');
     const headers = { 'content-type': 'application/json', 'accept': ' */*' }
     this.httpClient.post<any>(
@@ -36,7 +36,6 @@ export class AppComponent {
       }).subscribe(
         data => {
           console.log(data);
-
         }
       );
   }
