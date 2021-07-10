@@ -1,3 +1,7 @@
 export class GlobalStatic {
-static CreatePlayer = 'Player/AddPlayer';
+    static headers = { 'content-type': 'application/json', 'accept': ' */*' };
+    static CreatePlayer = 'Player/AddPlayer';
+    static CreateGame = 'Game/CreateGame';
+    static GetButtons = 'Nation/GetButtons';
+
 }
