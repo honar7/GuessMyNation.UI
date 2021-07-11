@@ -1,0 +1,48 @@
+
+  .NationButton{
+    position: absolute!;
+  }
+  .NationButton:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;  
+  }
+
+  .NationButton:nth-child(2) {
+    position: absolute;
+    bottom:  0;
+    left: 0;    
+  }
+
+  .NationButton:nth-child(3) {
+    position: absolute;
+    bottom:  0;
+    right: 0;    
+  }
+
+  .NationButton:nth-child(4) {
+    position: absolute;
+    top:  0;
+    right: 0;    
+  }
+
+  .NationButton {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #046daa;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .NationButton:hover {background-color: #015d88}
+  
+  .NationButton:active {
+    background-color: #00354e;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }

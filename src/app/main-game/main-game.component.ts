@@ -10,25 +10,18 @@ import { GlobalStatic } from 'src/GlobalStatic';
 })
 export class MainGameComponent implements OnInit {
   buttonList: NationButton[] | undefined;
+  randomlyNationItems: any;
 
-  Japanese: NationButton | undefined;
-  Thai: NationButton | undefined;
-  Chinese: NationButton | undefined;
-  Korean: NationButton | undefined;
+  constructor(public httpClient: HttpClient) {
 
-  constructor(public httpClient: HttpClient) { }
+  }
 
   ngOnInit(): void {
-    this.initButton();
     this.getNationButton();
+    this.GetRandomlyNation();
   }
 
-  initButton() {
-    this.Japanese = new NationButton(1, 1, 'Japanese');
-    this.Thai = new NationButton(2, 2, 'Thai');
-    this.Chinese = new NationButton(3, 3, 'Chinese');
-    this.Korean = new NationButton(4, 4, 'Korean');
-  }
+
 
   getNationButton() {
     this.httpClient.get<any>(
@@ -43,6 +36,23 @@ export class MainGameComponent implements OnInit {
     );
   }
 
+  GetRandomlyNation() {
+    this.httpClient.get<any>(
+      environment.serverUrl + GlobalStatic.GetFixFiveRandomly, {
+      'headers': GlobalStatic.headers,
+    }).subscribe(
+      data => {
+        if (data) {
+          this.randomlyNationItems = data;
+        }
+      }
+    );
+  }
+
+  NationClick(event:any) {
+    console.log(event);
+    //call add answer api
+  }
 
 }
 

@@ -1,21 +1,10 @@
-<!--
-<div *ngIf="playerModel">
-    {{playerModel | json}}
-</div>
- -->
- 
 <form #loginForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="!submitted">
+    <h1>{{title}}</h1>
     <div class="form-group">
-        <label for="name">Name</label>
+        <label for="name">Player Name :</label>
         <input *ngIf="playerModel && !submitted" type="text" class="form-control" id="name" #name="ngModel" required
             [(ngModel)]="playerModel.name" name="name">
-
-        <!-- <div [hidden]="playerModel.name.valid" class="alert alert-danger">
-        Name is required
-    </div> -->
 
         <button type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid">Login</button>
     </div>
 </form>
-
-<router-outlet></router-outlet>

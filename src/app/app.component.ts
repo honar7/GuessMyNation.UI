@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Guess My Nation';
+
   constructor(
     public httpClient: HttpClient
   ) {
   }
 
   ngOnInit() {
-    this.title = 'Guess My Nation';
+
   }
 }
 

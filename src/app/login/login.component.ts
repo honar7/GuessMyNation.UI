@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   playerModel: GamePlayer | undefined;
   playerId: any;
   gameHeaderId: any;
+  title = 'Guess My Nation';
   constructor(
     public httpClient: HttpClient,
     private route: ActivatedRoute,
@@ -63,10 +64,8 @@ export class LoginComponent implements OnInit {
           if (data) {
             this.gameHeaderId = data;
             this.router.navigate(['/start-game', { GameHeaderId: this.gameHeaderId }]);
-            this.router.navigateByUrl('start-game');
-            console.log('must go');
-
-
+            // this.router.navigateByUrl('start-game');
+            
           }
         }
       );
