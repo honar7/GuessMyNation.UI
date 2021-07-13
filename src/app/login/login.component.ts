@@ -63,9 +63,9 @@ export class LoginComponent implements OnInit {
         data => {
           if (data) {
             this.gameHeaderId = data;
-            this.router.navigate(['/start-game', { GameHeaderId: this.gameHeaderId }]);
+            this.router.navigate(['/start-game'], { queryParams: { GameHeaderId: this.gameHeaderId, PlayerId: this.playerId } });
             // this.router.navigateByUrl('start-game');
-            
+
           }
         }
       );

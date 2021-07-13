@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { MainGameComponent } from './main-game/main-game.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MainGameComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     CommonModule,
     BrowserModule,
     HttpClientModule,
