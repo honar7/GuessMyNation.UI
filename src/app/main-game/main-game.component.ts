@@ -30,6 +30,7 @@ export class MainGameComponent implements OnInit, AfterViewInit {
   bounceInDown: any;
   GameHeaderId: number = 0;
   PlayerId: any;
+  
 
   constructor(public httpClient: HttpClient,
     private route: ActivatedRoute,
@@ -137,7 +138,8 @@ export class MainGameComponent implements OnInit, AfterViewInit {
 
   restart() {
     this.gameFinished = false;    
-    this.router.navigate(['/start-game']);
+    this.createGame();
+    // this.router.navigate(['/start-game']);
     this.GetRandomlyNation();
     this.startTimer();
   }
@@ -161,6 +163,24 @@ export class MainGameComponent implements OnInit, AfterViewInit {
       }
     }
     );
+  }
+
+  createGame() {
+    this.httpClient.post<any>(
+      environment.serverUrl + GlobalStatic.CreateGame,
+      { playerId: this.PlayerId },
+      {
+        'headers': GlobalStatic.headers,
+      }).subscribe(
+        data => {
+          if (data) {
+            this.GameHeaderId = data;
+            this.router.navigate(['/start-game'], { queryParams: { GameHeaderId: this.GameHeaderId, PlayerId: this.PlayerId } });
+            // this.router.navigateByUrl('start-game');
+
+          }
+        }
+      );
   }
 
   finishedApiCall() {
